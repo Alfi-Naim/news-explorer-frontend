@@ -1,0 +1,131 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 104px;
+    padding-right: 104px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.footer__credits {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #B6BCBF;
+    display: flex;
+    margin: 0 16px 0 0;
+}
+
+.footer__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.footer__link {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    text-decoration: none;
+    margin-right: 24px;
+}
+
+.footer__icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+}
+
+.footer__icon-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer__link-container {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 890px) {
+
+    .footer {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+@media screen and (max-width: 664px) {
+
+    .footer {
+        margin-top: 24px;
+    }
+
+}
+
+@media screen and (max-width: 590px) {
+
+    .footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+}
+
+
+@media screen and (max-width: 530px) {
+
+    .footer {
+        flex-direction: column-reverse;
+        margin-bottom: 0;
+    }
+
+    .footer__nav {
+        width: 100%;
+        justify-content: space-between;
+
+    }
+
+    .footer__icon-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+    
+    .footer__link-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__credits {
+        margin-right: 0;
+        margin-top: 38px;
+        margin-bottom: 22px;
+    }
+
+    .footer__link {
+        margin-top: 20px;
+        margin-right: 0;
+        text-align: start;
+    }
+
+    .footer__icon {
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+}
+
+
+
+
