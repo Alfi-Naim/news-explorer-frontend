@@ -1,21 +1,22 @@
 import NewsCard from '../NewsCard/NewsCard';
 import './NewsCardList.css';
-import { cards } from "../../constants";
 import notFoundImg from "../../images/not-found.svg";
 
-function NewsCardList({ searchStatus }) {
+function NewsCardList({ searchStatus, cards, cardsCount, onMoreClick, loggedIn, onBookmarkClick, keyword, savedCards, onTrashClick }) {
 
-    if (searchStatus === "found") {
+    console.log("list");
+    
+    if (searchStatus === "found" || cards.length > 0) {
         return (
             <section className='news-cards'>
                 <div className='news-cards__container'>
                     <h2 className='news-cards__title'>Search results</h2>
                     <ul className="news-cards__card-list">
-                        {cards.slice(0, 3).map(cardItem => (
-                            <NewsCard card={cardItem} key={cardItem.id} saved={false} onSavePage={false} />
+                        {cards.slice(0, cardsCount).map((cardItem, index) => (
+                            <NewsCard savedCards={savedCards} card={cardItem} key={index} saved={false} onSavePage={false} loggedIn={loggedIn} onBookmarkClick={onBookmarkClick} keyword={keyword} onTrashClick={onTrashClick}/>
                         ))}
                     </ul>
-                    <button className='news-cards__more-btn'>Show more</button>
+                    {cardsCount < 100 && <button className='news-cards__more-btn' onClick={onMoreClick}>Show more</button>}
                 </div>
             </section>
         )
@@ -24,7 +25,7 @@ function NewsCardList({ searchStatus }) {
         return (
             <section className='news-cards'>
                 {<div className='news-cards__container'>
-                    <i class="circle-preloader"></i>
+                    <i className="circle-preloader"></i>
                     <p className='news-cards__loading-title'>Searching for news...</p>
                 </div>}
             </section>
@@ -41,7 +42,18 @@ function NewsCardList({ searchStatus }) {
                 </div>
             </section >
         )
+    }
+
+    else if (searchStatus === "error") {
+        return (
+            <section className='news-cards'>
+                <div className='news-cards__container'>
+                    <p className="news-cards__error-text">Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.</p>
+                </div>
+            </section >
+        )
     };
+    
 
     return "";
 }

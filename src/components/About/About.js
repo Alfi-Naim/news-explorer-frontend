@@ -1,5 +1,5 @@
 import './About.css';
-import personImage from '../../images/person.jpg'
+import personImage from '../../images/person.jfif'
 
 function About() {
     return (

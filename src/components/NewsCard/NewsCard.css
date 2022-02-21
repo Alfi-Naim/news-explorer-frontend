@@ -5,6 +5,10 @@
     position: relative;
 }
 
+.card__link {
+    text-decoration: none;
+}
+
 .card__bookmark {
     width: 40px;
     height: 40px;

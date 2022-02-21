@@ -10,11 +10,11 @@ function Footer() {
             <nav className='footer__nav'>
                 <div className='footer__link-container'>
                     <Link className='footer__link' to='/'>Home</Link>
-                    <a className='footer__link' href='https://practicum.yandex.com'>Practicum by Yandex</a>
+                    <a className='footer__link' href='https://practicum.yandex.com' target="_blank">Practicum by Yandex</a>
                 </div>
                 <div className='footer__icon-container'>
-                    <a className='footer__icon' href="https://github.com"><img src={githubIcon} alt='github'></img></a>
-                    <a className='footer__icon' href="https://facebook.com"><img src={facebookIcon} alt='facebook'></img></a>
+                    <a className='footer__icon' href="https://github.com/Alfi-Naim" target="_blank"><img src={githubIcon} alt='github'></img></a>
+                    <a className='footer__icon' href="https://facebook.com" target="_blank"><img src={facebookIcon} alt='facebook'></img></a>
                 </div>
             </nav>
         </footer>
