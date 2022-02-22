@@ -19,7 +19,7 @@ class NewsApi {
 }
 
 const newsApi = new NewsApi({
-    baseUrl: 'https://newsapi.org/v2/everything',
+    baseUrl: 'https://nomoreparties.co/news/v2/everything',
     apiKey: '4b5a598dbc0e4781aaaa579173e7e60d',
     to: new Date(),
     from: new Date(new Date() - (60 * 60 * 24 * 7 * 1000)),

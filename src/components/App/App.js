@@ -19,7 +19,7 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("jwt"));
-  const [cards, setCards] = useState(JSON.parse(localStorage.getItem("cards")));
+  const [cards, setCards] = useState(getCardsFromLocalStorage());
   const [savedCards, setSavedCards] = useState([]);
   const [cardsCount, setCardsCount] = useState(3);
   const [currentUser, setCurrentUser] = useState({ name: "", _id: "" });
@@ -83,6 +83,12 @@ function App() {
 
   function handleMenuClick() {
     setIsMenuOpen(!isMenuOpen);
+  }
+
+  function getCardsFromLocalStorage(){
+    const loadedCards = localStorage.getItem("cards");
+    if(loadedCards == null) return [];
+    else return JSON.parse(loadedCards);
   }
 
   function handleSignup({ email, password, name }) {

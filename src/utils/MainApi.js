@@ -67,7 +67,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-    baseUrl: 'https://api.alfons-news.students.nomoreparties.sbs',
+    baseUrl: 'https://api.alfons-news-app.students.nomoreparties.sbs',
     //baseUrl: 'http://localhost:3001',
 });
 
