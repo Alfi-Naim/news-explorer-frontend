@@ -108,7 +108,6 @@ function App() {
     console.log("Login : " + email + " , " + password);
     auth.signin({ email, password })
       .then((res) => {
-        console.log(res);
         localStorage.setItem("jwt", res.token);
         setToken(res.token);
         setLoggedIn(true);
@@ -137,19 +136,17 @@ function App() {
   }
 
   function deleteCard(card) {
-    mainApi.deleteArticle(card._id).then((res) => {
+    mainApi.deleteArticle(card._id).then(() => {
       setSavedCards((cards) =>
         cards.filter((item) => item._id !== card._id)
-      );
+      ).catch((err) => console.log(err));
     })
   }
 
   function saveCard(card) {
     mainApi.saveArticle(card).then((res) => {
-      console.log(res);
       setSavedCards([...savedCards, res]);
-    });
-    console.log(savedCards);
+    }).catch((err) => console.log(err));
   }
 
   function handleBookmarkClick(card) {
@@ -159,11 +156,9 @@ function App() {
     }
   }
 
-  function handleSearchClick(event) {
-    event.preventDefault();
+  function handleSearchClick({ searchedKeyword}) {
     setSearchStatus("loading");
     setCards([]);
-    const searchedKeyword = event.target.searchInput.value;
     newsApi.loadArticles(searchedKeyword).then((data) => {
       if (data.articles.length == 0) {
         setSearchStatus("not-found");
