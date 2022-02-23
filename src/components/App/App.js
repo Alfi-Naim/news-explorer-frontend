@@ -92,7 +92,6 @@ function App() {
   }
 
   function handleSignup({ email, password, name }) {
-    console.log("Register : " + email + " , " + password + " , " + name);
     auth.signup({ email, password, name })
       .then((res) => {
         if (res) {
@@ -105,7 +104,6 @@ function App() {
   }
 
   function handleSignin({ email, password }) {
-    console.log("Login : " + email + " , " + password);
     auth.signin({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
@@ -139,8 +137,8 @@ function App() {
     mainApi.deleteArticle(card._id).then(() => {
       setSavedCards((cards) =>
         cards.filter((item) => item._id !== card._id)
-      ).catch((err) => console.log(err));
-    })
+      )
+    }).catch((err) => console.log(err));
   }
 
   function saveCard(card) {
@@ -187,8 +185,6 @@ function App() {
     setIsMenuOpen(false);
   }
 
-  console.log("app");
-
   return (
     <div className="page">
       <div className="page-content">
@@ -218,7 +214,7 @@ function App() {
               <Register
                 isOpen={isSignupPopupOpen}
                 onClose={closeAllPopups}
-                onRegister={handleSignup}
+                onRegister={handleSignup}   
                 onBottomLinkClick={toggleSigningPopups}
                 submitError={submitError}
                 setSubmitError={setSubmitError} />
@@ -245,7 +241,8 @@ function App() {
                 onMoreClick={handleMoreBtnClick}
                 onBookmarkClick={handleBookmarkClick}
                 onTrashClick={deleteCard}
-                savedCards={savedCards} />
+                savedCards={savedCards}
+                setIsSignupPopupOpen={setIsSignupPopupOpen} />
               <Footer />
             </Route>
           </Switch>

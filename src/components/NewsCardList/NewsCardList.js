@@ -2,10 +2,8 @@ import NewsCard from '../NewsCard/NewsCard';
 import './NewsCardList.css';
 import notFoundImg from "../../images/not-found.svg";
 
-function NewsCardList({ searchStatus, cards, cardsCount, onMoreClick, loggedIn, onBookmarkClick, keyword, savedCards, onTrashClick }) {
+function NewsCardList({ searchStatus, cards, cardsCount, onMoreClick, loggedIn, onBookmarkClick, keyword, savedCards, onTrashClick, setIsSignupPopupOpen }) {
 
-    console.log("list");
-    
     if (searchStatus === "found" || cards.length > 0) {
         return (
             <section className='news-cards'>
@@ -13,7 +11,7 @@ function NewsCardList({ searchStatus, cards, cardsCount, onMoreClick, loggedIn, 
                     <h2 className='news-cards__title'>Search results</h2>
                     <ul className="news-cards__card-list">
                         {cards.slice(0, cardsCount).map((cardItem, index) => (
-                            <NewsCard savedCards={savedCards} card={cardItem} key={index} saved={false} onSavePage={false} loggedIn={loggedIn} onBookmarkClick={onBookmarkClick} keyword={keyword} onTrashClick={onTrashClick}/>
+                            <NewsCard setIsSignupPopupOpen={setIsSignupPopupOpen} savedCards={savedCards} card={cardItem} key={index} saved={false} onSavePage={false} loggedIn={loggedIn} onBookmarkClick={onBookmarkClick} keyword={keyword} onTrashClick={onTrashClick}/>
                         ))}
                     </ul>
                     {cardsCount < 100 && <button className='news-cards__more-btn' onClick={onMoreClick}>Show more</button>}

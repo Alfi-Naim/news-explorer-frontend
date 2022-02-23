@@ -13,8 +13,6 @@ function PopupWithForm({
     isValid
 }) {
 
-    console.log(isValid);
-
     return (
         <div className={`popup ${isOpen && "popup_opened"}`}>
             <div className="popup__form-container">

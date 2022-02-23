@@ -1,6 +1,6 @@
 import './NewsCard.css';
 
-function NewsCard({ card, onSavePage, loggedIn, onBookmarkClick, onTrashClick, savedCards }) {
+function NewsCard({ card, onSavePage, loggedIn, onBookmarkClick, onTrashClick, savedCards, setIsSignupPopupOpen }) {
 
     const saved = loggedIn && savedCards && savedCards.length > 0 && savedCards.find(savedCard => savedCard.title === card.title);
 
@@ -19,9 +19,13 @@ function NewsCard({ card, onSavePage, loggedIn, onBookmarkClick, onTrashClick, s
         onTrashClick(saved ? saved : card);
     }
 
+    function openSignupPopup() {
+        setIsSignupPopupOpen(true);
+    }
+
     return (
         <li className="card">
-            <button className={onSavePage ? 'card__trash' : saved ? 'card__bookmark card__bookmark_marked' : 'card__bookmark'} onClick={saved ? handleTrashClick : handleBookmarkClick}></button>
+            <button className={onSavePage ? 'card__trash' : saved ? 'card__bookmark card__bookmark_marked' : 'card__bookmark'} onClick={loggedIn ? saved ? handleTrashClick : handleBookmarkClick : openSignupPopup}></button>
             {onSavePage ?
                 <div className='card__popup-container'>
                     <p className='card__popup-text'>Remove from saved</p>
