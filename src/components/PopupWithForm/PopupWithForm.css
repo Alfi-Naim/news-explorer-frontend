@@ -36,23 +36,11 @@
     font-size: 14px;
     line-height: 17px;
     color: #000;
-    margin: 9px 0 31px 0;
+    margin: 9px 0 0 0;
     padding-bottom: 13px;
     border: none;
     padding: 0 0 10px 0;
     border-bottom: 1px solid rgba(0,0,0,.2);
-}
-
-.popup__input_place_login {
-    margin-bottom: 3px;
-}
-
-.popup__input:last-of-type {
-    margin-bottom: 17px;
-}
-
-.popup__input_place_login:last-of-type {
-    margin-bottom: 3px;
 }
 
 .popup__input:focus {
@@ -123,7 +111,7 @@
     opacity: 0.8;
 }
 
-.popup__button_disabled {
+.popup__button:disabled {
     color: #B8B8B8;
     background: #EDEDED;
     pointer-events: none;
@@ -162,6 +150,7 @@
   }
 
   .popup__error-text {
+    height: 15px;
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -169,7 +158,13 @@
     line-height: 15px;
     text-align: center;
     color: #FF0000;
-    margin-top: 0;
+    margin-top: 3px;
+    margin-bottom: 13px;
+    text-align: left;
+}
+
+.popup__error-text_place_center {
+    text-align: center;
     margin-bottom: 8px;
 }
 

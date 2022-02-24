@@ -1,3 +1,6 @@
+* https://alfons-news-app.students.nomoreparties.sbs/ - Live Website
+* https://api.alfons-news-app.students.nomoreparties.sbs/ - API
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
