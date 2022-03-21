@@ -242,7 +242,7 @@ function App() {
                 onBookmarkClick={handleBookmarkClick}
                 onTrashClick={deleteCard}
                 savedCards={savedCards}
-                setIsSignupPopupOpen={setIsSignupPopupOpen} />
+                setIsSigninPopupOpen={setIsSigninPopupOpen} />
               <Footer />
             </Route>
           </Switch>

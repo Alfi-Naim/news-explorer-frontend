@@ -3,7 +3,7 @@ import NewsCardList from '../NewsCardList/NewsCardList';
 import About from '../About/About';
 import './Main.css';
 
-function Main({ onSearchClick, searchStatus, cards, cardsCount, onMoreClick, loggedIn, onBookmarkClick, keyword, savedCards, onTrashClick, setIsSignupPopupOpen }) {
+function Main({ onSearchClick, searchStatus, cards, cardsCount, onMoreClick, loggedIn, onBookmarkClick, keyword, savedCards, onTrashClick, setIsSigninPopupOpen }) {
 
     return (
         <>
@@ -14,7 +14,7 @@ function Main({ onSearchClick, searchStatus, cards, cardsCount, onMoreClick, log
                     <SearchForm onSearchClick={onSearchClick}/>
                 </div>
             </section>
-            <NewsCardList setIsSignupPopupOpen={setIsSignupPopupOpen} savedCards={savedCards} searchStatus={searchStatus} cards={cards} cardsCount={cardsCount} onMoreClick={onMoreClick} loggedIn={loggedIn} onBookmarkClick={onBookmarkClick} keyword={keyword} onTrashClick={onTrashClick}/>
+            <NewsCardList setIsSigninPopupOpen={setIsSigninPopupOpen} savedCards={savedCards} searchStatus={searchStatus} cards={cards} cardsCount={cardsCount} onMoreClick={onMoreClick} loggedIn={loggedIn} onBookmarkClick={onBookmarkClick} keyword={keyword} onTrashClick={onTrashClick}/>
             <About />
         </>
     );

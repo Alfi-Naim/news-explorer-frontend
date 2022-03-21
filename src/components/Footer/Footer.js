@@ -1,6 +1,6 @@
 import './Footer.css';
 import githubIcon from '../../images/github.svg'
-import facebookIcon from '../../images/facebook.svg'
+import linkedInIcon from '../../images/linkedin.svg'
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -14,7 +14,7 @@ function Footer() {
                 </div>
                 <div className='footer__icon-container'>
                     <a className='footer__icon' href="https://github.com/Alfi-Naim" target="_blank"><img src={githubIcon} alt='github'></img></a>
-                    <a className='footer__icon' href="https://facebook.com" target="_blank"><img src={facebookIcon} alt='facebook'></img></a>
+                    <a className='footer__icon' href="https://www.linkedin.com/in/alfi-naim" target="_blank"><img src={linkedInIcon} alt='linkedIn'></img></a>
                 </div>
             </nav>
         </footer>

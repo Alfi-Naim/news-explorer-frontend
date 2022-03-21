@@ -1,6 +1,6 @@
 import './NewsCard.css';
 
-function NewsCard({ card, onSavePage, loggedIn, onBookmarkClick, onTrashClick, savedCards, setIsSignupPopupOpen }) {
+function NewsCard({ card, onSavePage, loggedIn, onBookmarkClick, onTrashClick, savedCards, setIsSigninPopupOpen }) {
 
     const saved = loggedIn && savedCards && savedCards.length > 0 && savedCards.find(savedCard => savedCard.title === card.title);
 
@@ -20,7 +20,7 @@ function NewsCard({ card, onSavePage, loggedIn, onBookmarkClick, onTrashClick, s
     }
 
     function openSignupPopup() {
-        setIsSignupPopupOpen(true);
+        setIsSigninPopupOpen(true);
     }
 
     return (
