@@ -85,9 +85,9 @@ function App() {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  function getCardsFromLocalStorage(){
+  function getCardsFromLocalStorage() {
     const loadedCards = localStorage.getItem("cards");
-    if(loadedCards == null) return [];
+    if (loadedCards == null) return [];
     else return JSON.parse(loadedCards);
   }
 
@@ -154,7 +154,7 @@ function App() {
     }
   }
 
-  function handleSearchClick({ searchedKeyword}) {
+  function handleSearchClick({ searchedKeyword }) {
     setSearchStatus("loading");
     setCards([]);
     newsApi.loadArticles(searchedKeyword).then((data) => {
@@ -192,8 +192,8 @@ function App() {
           <Switch>
             <ProtectedRoute path="/saved-news" loggedIn={loggedIn}>
               <Header
+                setIsMenuOpen={setIsMenuOpen}
                 loggedIn={loggedIn}
-                onSavePage={true}
                 isMenuOpen={isMenuOpen}
                 onSignoutClick={handleSignout}
                 onMenuClick={handleMenuClick} />
@@ -205,8 +205,8 @@ function App() {
             </ProtectedRoute>
             <Route path="/">
               <Header
+                setIsMenuOpen={setIsMenuOpen}
                 loggedIn={loggedIn}
-                onSavePage={false}
                 isMenuOpen={isMenuOpen}
                 onSignoutClick={handleSignout}
                 onMenuClick={handleMenuClick}
@@ -214,7 +214,7 @@ function App() {
               <Register
                 isOpen={isSignupPopupOpen}
                 onClose={closeAllPopups}
-                onRegister={handleSignup}   
+                onRegister={handleSignup}
                 onBottomLinkClick={toggleSigningPopups}
                 submitError={submitError}
                 setSubmitError={setSubmitError} />
@@ -234,7 +234,6 @@ function App() {
               <Main
                 onSearchClick={handleSearchClick}
                 searchStatus={searchStatus}
-                onSavePage={false}
                 cards={cards}
                 cardsCount={cardsCount}
                 loggedIn={loggedIn}
