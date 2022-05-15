@@ -28,12 +28,12 @@
 
 #### Sign up
 
-<img src='./frontend/src/images/readme-1.png' width='700'/>
+<img src='./src/images/readme-1.png' width='700'/>
 
 #### Search news
 
-<img src='./frontend/src/images/readme-2.png' width='700'/>
+<img src='./src/images/readme-2.png' width='700'/>
 
 #### Reading list
 
-<img src='./frontend/src/images/readme-3.png' width='700'/>
+<img src='./src/images/readme-3.png' width='700'/>
