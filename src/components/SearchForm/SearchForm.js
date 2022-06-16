@@ -2,7 +2,7 @@ import './SearchForm.css';
 
 import React, { useState } from "react";
 
-function SearchForm({ onSearchClick }) {
+function SearchForm({ onSearchClick, isPending }) {
 
     const [keyword, setKeyword] = useState("");
 
@@ -20,7 +20,7 @@ function SearchForm({ onSearchClick }) {
             <input className="search__input" type="text" id="search-input" 
             value={keyword} onChange={handleChange}
             name="searchInput" placeholder="Enter topic" required />
-            <button className="search__button" type="submit">Search</button>
+            <button className="search__button" type="submit">{isPending ? "Searching" : "Search"}</button>
         </form>
 
     );

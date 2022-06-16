@@ -30,6 +30,7 @@ function App() {
   const [isSigninPopupOpen, setIsSigninPopupOpen] = useState(false);
   const [isInfoPopupOpen, setIsInfoPopupOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
     const closePopupByEscape = (evt) => {
@@ -92,6 +93,7 @@ function App() {
   }
 
   function handleSignup({ email, password, name }) {
+    setIsPending(true);
     auth.signup({ email, password, name })
       .then((res) => {
         if (res) {
@@ -100,10 +102,13 @@ function App() {
         }
       }).catch((err) => {
         setSubmitError("User with this email address already exists");
-      })
+      }).finally(() =>{
+        setIsPending(false);
+      });
   }
 
   function handleSignin({ email, password }) {
+    setIsPending(true);
     auth.signin({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
@@ -113,6 +118,8 @@ function App() {
       })
       .catch((err) => {
         setSubmitError("Incorrect email or password");
+      }).finally(() =>{
+        setIsPending(false);
       });
   }
 
@@ -155,6 +162,7 @@ function App() {
   }
 
   function handleSearchClick({ searchedKeyword }) {
+    setIsPending(true);
     setSearchStatus("loading");
     setCards([]);
     newsApi.loadArticles(searchedKeyword).then((data) => {
@@ -171,6 +179,8 @@ function App() {
       }
     }).catch(() => {
       setSearchStatus("error");
+    }).finally(() => {
+      setIsPending(false)
     });
   }
 
@@ -217,14 +227,16 @@ function App() {
                 onRegister={handleSignup}
                 onBottomLinkClick={toggleSigningPopups}
                 submitError={submitError}
-                setSubmitError={setSubmitError} />
+                setSubmitError={setSubmitError} 
+                isPending={isPending}/>
               <Login
                 isOpen={isSigninPopupOpen}
                 onClose={closeAllPopups}
                 onLogin={handleSignin}
                 onBottomLinkClick={toggleSigningPopups}
                 submitError={submitError}
-                setSubmitError={setSubmitError} />
+                setSubmitError={setSubmitError}
+                isPending={isPending} />
               <PopupWithForm
                 isOpen={isInfoPopupOpen}
                 onClose={closeAllPopups}
@@ -241,7 +253,8 @@ function App() {
                 onBookmarkClick={handleBookmarkClick}
                 onTrashClick={deleteCard}
                 savedCards={savedCards}
-                setIsSigninPopupOpen={setIsSigninPopupOpen} />
+                setIsSigninPopupOpen={setIsSigninPopupOpen}
+                isPending={isPending} />
               <Footer />
             </Route>
           </Switch>

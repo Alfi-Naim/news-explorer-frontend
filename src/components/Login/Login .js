@@ -2,7 +2,7 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useForm } from "react-hook-form";
 import React, { useEffect } from "react";
 
-function Login({ isOpen, onClose, onLogin, onBottomLinkClick, submitError, setSubmitError }) {
+function Login({ isOpen, onClose, onLogin, onBottomLinkClick, submitError, setSubmitError, isPending }) {
 
     const { register, handleSubmit, reset, clearErrors,formState, formState: { errors }} = useForm({ mode: "onChange" });
 
@@ -25,7 +25,7 @@ function Login({ isOpen, onClose, onLogin, onBottomLinkClick, submitError, setSu
             isOpen={isOpen}
             onClose={onClose}
             title="Sign in"
-            submitTitle="Sign in"
+            submitTitle={isPending? "Signing in..." : "Sign in"}
             onSubmit={handleSubmit(onSubmit)}
             bottomLink="Sign up"
             bottomLinkText="or "
