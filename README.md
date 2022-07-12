@@ -26,10 +26,6 @@
 
 ## Screenshots
 
-#### Sign up
-
-<img src='./src/images/readme-1.png' width='700'/>
-
 #### Search news
 
 <img src='./src/images/readme-2.png' width='700'/>
