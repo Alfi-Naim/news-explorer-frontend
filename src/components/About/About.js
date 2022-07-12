@@ -1,5 +1,5 @@
 import './About.css';
-import personImage from '../../images/person2.jpg'
+import personImage from '../../images/person.png'
 
 function About() {
     return (

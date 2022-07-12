@@ -1,6 +1,6 @@
 import api from "./MainApi";
 
-export const BASE_URL = "https://api.alfons-news-app.students.nomoreparties.sbs";
+export const BASE_URL = "https://api.alfi-explorer.students.nomoreparties.sbs";
 //export const BASE_URL = "http://localhost:3001";
 
 export const signin = ({ email, password }) => {
