@@ -2,8 +2,8 @@
 
 ## This repository contains:
 
-- The **[frontend](https://alfons-news-app.students.nomoreparties.sbs)** React Application
-- **[Backend API](https://api.alfons-news-app.students.nomoreparties.sbs)**
+- The **[frontend](https://alfi-explorer.students.nomoreparties.sbs)** React Application
+- **[Backend API](https://api.alfi-explorer.students.nomoreparties.sbs)**
 
 ## Project overview
 
