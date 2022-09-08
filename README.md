@@ -2,8 +2,8 @@
 
 ## This repository contains:
 
-- The **[frontend](https://alfi-explorer.students.nomoreparties.sbs)** React Application
-- **[Backend API](https://api.alfi-explorer.students.nomoreparties.sbs)**
+- The **[frontend](https://naim-news.students.nomoredomainssbs.ru)** React Application
+- **[Backend API](https://api.naim-news.students.nomoredomainssbs.ru)**
 
 ## Project overview
 
