@@ -67,7 +67,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-    baseUrl: 'https://api.alfi-explorer.students.nomoreparties.sbs',
+    baseUrl: 'https://api.naim-news.students.nomoredomainssbs.ru',
     //baseUrl: 'http://localhost:3001',
 });
 
