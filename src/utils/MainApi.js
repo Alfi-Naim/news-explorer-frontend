@@ -67,8 +67,8 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-    baseUrl: 'https://api.naim-news.students.nomoredomainssbs.ru',
-    //baseUrl: 'http://localhost:3001',
+    //baseUrl: 'https://api.naim-news.students.nomoredomainssbs.ru',
+    baseUrl: 'http://localhost:3001',
 });
 
 export default mainApi;
