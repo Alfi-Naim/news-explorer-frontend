@@ -1,7 +1,7 @@
 import api from "./MainApi";
 
-export const BASE_URL = "https://api.naim-news.students.nomoredomainssbs.ru";
-//export const BASE_URL = "http://localhost:3001";
+//export const BASE_URL = "https://api.naim-news.students.nomoredomainssbs.ru";
+export const BASE_URL = "http://localhost:3001";
 
 export const signin = ({ email, password }) => {
   return fetch(`${BASE_URL}/signin`, {
